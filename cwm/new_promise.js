@@ -10,7 +10,9 @@ console.log('After');
 getUser(1)
     .then(user=>getRepositories(user.githubUserName))
     .then(repos=>getCommits(repos[0]))
-    .then(commits=>console.log(commits));
+    .then(commits=>console.log(commits))
+    .catch(err=>console.log("New Error",err.message));
+
 
 function getUser(id) {
 
